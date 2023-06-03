@@ -6,19 +6,22 @@ export default function Skills() {
   const frontSkills = [
     "html",
     "css",
-    "javascript",
+    "js",
+    'ts',
     "react",
-    "nextjs",
+    "next",
     "firebase",
     "tailwind",
+    'github',
+    'aws'
   ];
 
-  const backSkills = ["aws", "github"];
+  const backSkills = ["aws", "github", "mysql"];
 
   const [front, setFront] = useState(true);
 
   return (
-    <div className="w-full p-2 mt-32">
+    <div data-aos="fade-up" className="w-full p-2 mt-32">
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center items-center bg-white/10 p-8 rounded-3xl">
         <p className="text-5xl text-purple-500 tracking-widest uppercase font-bold">
           Skills
