@@ -60,7 +60,7 @@ export default function Category({ closeCategory, categoryVisible }: any) {
         </div>
         <div className="absolute left-14 mt-24">
           <p className="text-purple-500 text-xl font-bold tracking-widest">
-            LET'S CONNECT
+            LET&apos;S CONNECT
           </p>
           <ul className="flex mt-6 items-center gap-16">
             <li className="text-black w-10 h-10 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-150 flex items-center justify-center">

@@ -14,7 +14,7 @@ export default function Header() {
           <GiHamburgerMenu className="cursor-pointer hover:scale-110 ease-in-out duration-300" onClick={handleCategory}/>
         </div>
         <Link href={"/"} className="text-3xl font-bold">
-          Min's Portfolio
+          Min&apos;s Portfolio
         </Link>
         <Category closeCategory={handleCategory} categoryVisible={categoryVisible}/>
       </nav>
