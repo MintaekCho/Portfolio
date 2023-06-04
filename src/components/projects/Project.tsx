@@ -16,6 +16,7 @@ export default function Project() {
     projectTitle: string;
     projectCount: number;
   }>(frontProjects[0]);
+  console.log(project)
   const { projectTitle, projectCount } = project;
   return (
     <section
@@ -78,7 +79,7 @@ export default function Project() {
       )}
 
       <ImageWrap title={projectTitle} imageCount={projectCount} />
-      <Description title={projectTitle} />
+      <Description title={project.projectTitle} />
     </section>
   );
 }

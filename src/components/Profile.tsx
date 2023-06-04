@@ -22,6 +22,7 @@ export default function Profile() {
         alt={`profile${count}`}
         width={400}
         height={600}
+        priority
       />
       <div className="flex gap-10 items-center mt-6">
         <div className="text-5xl">
@@ -31,7 +32,7 @@ export default function Profile() {
           />
         </div>
         <p>
-          {count} / <span className="font-bold">4</span>
+          {count} / <span className="font-bold">3</span>
         </p>
         <div className="text-5xl">
           <BsFillCaretRightFill

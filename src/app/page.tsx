@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 
 export default function Home() {
   useEffect(() => {
-    Aos.init({ duration: 1500 });
+    Aos.init({ duration: 2000 });
   }, []);
   return (
     <div className="flex items-center justify-center flex-col mt-48">
