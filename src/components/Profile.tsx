@@ -20,7 +20,7 @@ export default function Profile() {
         className="rounded-3xl hover:scale-105 ease-in-out duration-300"
         src={`/images/profile${count}.jpeg`}
         alt={`profile${count}`}
-        width={500}
+        width={400}
         height={600}
       />
       <div className="flex gap-10 items-center mt-6">
