@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   const [loginError, setLoginError] = useState<string>("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: Event) => {
     console.log(e)
     if (
       id === process.env.NEXT_PUBLIC_ADMIN_ID &&

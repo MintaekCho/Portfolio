@@ -6,12 +6,12 @@ import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 export default function Profile() {
   const [count, setCount] = useState<number>(1);
   const handleUpCount = () => {
-    if (count > 3) setCount(1);
+    if (count > 2) setCount(1);
     else setCount((count) => count + 1);
   };
 
   const handleDownCount = () => {
-    if (count < 2) setCount(4);
+    if (count < 2) setCount(3);
     else setCount((count) => count - 1);
   };
   return (
