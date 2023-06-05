@@ -19,7 +19,7 @@ export default function Category({ closeCategory, categoryVisible }: any) {
             src={"/images/Logo.png"}
             alt={"logo"}
             width={120}
-            height={100}
+            height={120}
           />
         </div>
         <div

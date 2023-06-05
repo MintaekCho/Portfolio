@@ -4,6 +4,8 @@ import Image from "next/image";
 import React from "react";
 import { useTypewriter } from "use-typewriter-hook";
 import { Open_Sans } from "next/font/google";
+import { useRecoilState } from "recoil";
+import { loginState } from "@/atom/atom";
 
 const sans = Open_Sans({ subsets: ["latin"] });
 
@@ -13,6 +15,9 @@ export default function Introduction() {
     autoStartDelay: 0,
     typingDelayMillis: 100,
   });
+
+  const [isLogin, setIsLogin] = useRecoilState(loginState);
+  console.log(isLogin)
   return (
     <section className="flex flex-col items-center gap-10">
       <div className="motion-safe:animate-bounce w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] border-2 border-white rounded-full flex items-center justify-center flex-col z-[-1]">
