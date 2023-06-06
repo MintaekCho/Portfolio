@@ -34,7 +34,6 @@ export default function HeaderNav() {
         <CgProfile />
         <span className="text-sm font-bold">admin</span>
       </div>
-      {isLogin ? <p>로그인 상태임</p> : <p>로그아웃 상태임</p>}
       <Category
         closeCategory={handleCategory}
         categoryVisible={categoryVisible}
