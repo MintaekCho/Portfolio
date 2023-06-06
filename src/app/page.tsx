@@ -14,16 +14,15 @@ export default function Home() {
     Aos.init({ duration: 2000 });
   }, []);
 
-
   return (
-    <RecoilRoot>
-      <div className="flex items-center justify-center flex-col mt-48">
+    <div className="flex items-center justify-center flex-col mt-48">
+      <RecoilRoot override={false}>
         <Introduction />
         <About />
         <Skills />
         <Project />
         <Footer />
-      </div>
-    </RecoilRoot>
+      </RecoilRoot>
+    </div>
   );
 }

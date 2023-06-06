@@ -33,7 +33,8 @@ export default function Login() {
       console.log('로그인됨')
         redirect('/')
     }
-}, [])
+    console.log('로그인 check')
+}, [login])
   return (
     <div className="w-full mt-28 max-w-[1240px] min-w-[460px] flex items-center justify-center">
       <section className="flex flex-col items-center gap-4 p-20 bg-white/20 rounded-2xl">

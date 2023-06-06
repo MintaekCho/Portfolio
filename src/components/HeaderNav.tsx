@@ -14,6 +14,7 @@ export default function HeaderNav() {
   const router = useRouter();
 
   const isLogin = useRecoilValue(loginState);
+  console.log(isLogin)
 
   const goLoginPage = () => router.push("/login");
   return (

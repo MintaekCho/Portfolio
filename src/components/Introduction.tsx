@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTypewriter } from "use-typewriter-hook";
 import { Open_Sans } from "next/font/google";
 import { useRecoilState } from "recoil";
@@ -10,11 +10,17 @@ import { loginState } from "@/atom/atom";
 const sans = Open_Sans({ subsets: ["latin"] });
 
 export default function Introduction() {
+  const [isLogin] = useRecoilState(loginState);
+
   const { textValue: typeText } = useTypewriter({
     targetText: "안녕하세요. 프론트엔드 개발자 조민택입니다.",
     autoStartDelay: 0,
     typingDelayMillis: 100,
   });
+
+  useEffect(() => {
+    console.log(isLogin);
+  }, []);
 
   return (
     <section className="flex flex-col items-center gap-10">

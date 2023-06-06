@@ -5,11 +5,9 @@ import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 
 export default function LoginPage() {
-
-    
   
   return (
-    <RecoilRoot>
+    <RecoilRoot override={false}>
         <Login />
     </RecoilRoot>
   );
