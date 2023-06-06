@@ -2,15 +2,12 @@
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
-import Category from "./Category";
-import { useRecoilState, useRecoilValue } from "recoil";
+import {useRecoilValue } from "recoil";
 import { loginState } from "@/atom/atom";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
-export default function HeaderNav() {
-  const [categoryVisible, setCategoryVisible] = useState(false);
-  const handleCategory = () => setCategoryVisible(!categoryVisible);
+export default function HeaderNav({handleCategory}: any) {
+ 
   const router = useRouter();
 
   const isLogin = useRecoilValue(loginState);
@@ -18,7 +15,7 @@ export default function HeaderNav() {
 
   const goLoginPage = () => router.push("/login");
   return (
-    <nav className="flex justify-center items-center p-4 relative">
+    <nav className="flex justify-center items-center p-4 relative backdrop-blur-sm">
       <div className="text-white text-4xl absolute left-0">
         <GiHamburgerMenu
           className="cursor-pointer hover:scale-110 ease-in-out duration-300"
@@ -35,10 +32,7 @@ export default function HeaderNav() {
         <CgProfile />
         <span className="text-sm font-bold">admin</span>
       </div>
-      <Category
-        closeCategory={handleCategory}
-        categoryVisible={categoryVisible}
-      />
+      
     </nav>
   );
 }
