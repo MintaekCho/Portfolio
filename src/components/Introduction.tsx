@@ -16,11 +16,9 @@ export default function Introduction() {
     typingDelayMillis: 100,
   });
 
-  const [isLogin, setIsLogin] = useRecoilState(loginState);
-  console.log(isLogin)
   return (
     <section className="flex flex-col items-center gap-10">
-      <div className="motion-safe:animate-bounce w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] border-2 border-white rounded-full flex items-center justify-center flex-col z-[-1]">
+      <div className="animate-bounce w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] border-2 border-white rounded-full flex items-center justify-center flex-col z-[-1]">
         <Image
           className="rounded-full w-[130px] h-[130px] mb-4"
           src={"/images/profile1.jpeg"}

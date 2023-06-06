@@ -21,7 +21,7 @@ export default function Skills() {
   const [front, setFront] = useState(true);
 
   return (
-    <div data-aos="fade-up" className="w-full p-2 mt-32">
+    <div id="skills" data-aos="fade-up" className="w-full p-2 mt-32">
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center items-center bg-white/10 p-8 rounded-3xl">
         <p className="text-5xl text-purple-500 tracking-widest uppercase font-bold">
           Skills
@@ -30,13 +30,13 @@ export default function Skills() {
         <div className="w-full min-w-[500px] flex flex-col sm:flex-row gap-6 items-center justify-between mb-10">
           <button
             onClick={() => setFront(true)}
-            className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-3xl hover:tracking-widest ease-in-out duration-300"
+            className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-2xl md:hover:text-3xl hover:tracking-widest ease-in-out duration-300"
           >
             frontend
           </button>
           <button
             onClick={() => setFront(false)}
-            className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-3xl hover:tracking-widest ease-in-out duration-300"
+            className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-2xl md:hover:text-3xl hover:tracking-widest ease-in-out duration-300"
           >
             backend
           </button>

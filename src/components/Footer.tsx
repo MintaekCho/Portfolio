@@ -4,7 +4,7 @@ import { BsInstagram, BsGithub } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <footer className="w-screen h-80 flex flex-col items-center justify-center gap-20 bg-white/10 mt-10">
+    <footer id="contact" className="w-screen h-80 flex flex-col items-center justify-center gap-20 bg-white/10 mt-10">
       <ul className="flex gap-10">
         <li className="text-5xl">
           <Link href={""}>

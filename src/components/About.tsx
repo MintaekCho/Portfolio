@@ -9,6 +9,7 @@ import Profile from "./Profile";
 export default function About() {
   return (
     <section
+      id="about"
       data-aos="fade-up"
       className="w-full max-w-[1240px] flex flex-col items-center justify-center p-8 bg-white/10 rounded-3xl"
     >

@@ -20,6 +20,7 @@ export default function Project() {
   const { projectTitle, projectCount } = project;
   return (
     <section
+    id="project"
       data-aos="fade-up"
       className="w-full max-w-[1240px] flex flex-col items-center justify-center p-8 bg-white/10 rounded-3xl mt-10"
     >
@@ -30,7 +31,7 @@ export default function Project() {
             setFront(true);
             setProject(frontProjects[0]);
           }}
-          className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-3xl hover:tracking-widest ease-in-out duration-300"
+          className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-2xl md:hover:text-3xl hover:tracking-widest ease-in-out duration-300"
         >
           frontend
         </button>
@@ -39,7 +40,7 @@ export default function Project() {
             setFront(false);
             setProject(backProjects[0]);
           }}
-          className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-3xl hover:tracking-widest ease-in-out duration-300"
+          className="w-2/5 p-8 text-2xl font-bold hover:scale-105 hover:text-2xl md:hover:text-3xl hover:tracking-widest ease-in-out duration-300"
         >
           backend
         </button>

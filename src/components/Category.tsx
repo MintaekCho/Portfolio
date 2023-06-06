@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
 import { AiOutlineClose, AiOutlineMail } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
+import { Link as Links } from "react-scroll";
 
 export default function Category({ closeCategory, categoryVisible }: any) {
   return (
@@ -31,31 +33,66 @@ export default function Category({ closeCategory, categoryVisible }: any) {
         <div className="border w-4/5 absolute left-[10%] top-36 border-gray-100" />
         <div className="">
           <ul className="text-black text-xl p-14 pt-48 flex flex-col">
-            <Link href={"/"}>
+            <Links
+              onClick={closeCategory}
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
               <li className="py-4 hover:text-purple-500 hover:font-bold">
                 HOME
               </li>
-            </Link>
-            <Link href={"/"}>
+            </Links>
+            <Links
+              onClick={closeCategory}
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
               <li className="py-4 hover:text-purple-500 hover:font-bold">
                 ABOUT
               </li>
-            </Link>
-            <Link href={"/"}>
+            </Links>
+            <Links
+              onClick={closeCategory}
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
               <li className="py-4 hover:text-purple-500 hover:font-bold">
                 SKILLS
               </li>
-            </Link>
-            <Link href={"/"}>
+            </Links>
+            <Links
+              onClick={closeCategory}
+              to="project"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
               <li className="py-4 hover:text-purple-500 hover:font-bold">
                 PROJECT
               </li>
-            </Link>
-            <Link href={"/"}>
+            </Links>
+            <Links
+              onClick={closeCategory}
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
               <li className="py-4 hover:text-purple-500 hover:font-bold">
                 CONTACT
               </li>
-            </Link>
+            </Links>
           </ul>
         </div>
         <div className="absolute left-14 mt-24">
