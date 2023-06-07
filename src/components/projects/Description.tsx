@@ -51,12 +51,16 @@ export default function Description({ title }: { title: string }) {
             <div className="w-full p-8 bg-white/60 rounded-2xl mt-2 flex flex-col items-center gap-2">
               <div>
                 <p className="flex gap-1 items-center text-xl font-bold shrink-0">
-                  <BsFillCheckCircleFill />
-                  기술 스택: Spring boot, Redis, JPA, MySQL
+                  <div>
+                    <BsFillCheckCircleFill />
+                  </div>
+                  <span>기술 스택: Spring boot, Redis, JPA, MySQL</span>
                 </p>
                 <p className="flex gap-1 items-center text-xl font-bold shrink-0 mt-2">
-                  <BsFillCheckCircleFill />
-                  배포 : AWS(EC2, RDS)
+                  <div>
+                    <BsFillCheckCircleFill />
+                  </div>
+                  <span>배포 : AWS(EC2, RDS)</span>
                 </p>
               </div>
             </div>
@@ -88,11 +92,15 @@ export default function Description({ title }: { title: string }) {
             <div className="w-full p-8 bg-white/60 rounded-2xl mt-2 flex flex-col items-center gap-2">
               <div>
                 <p className="flex gap-1 items-center text-xl font-bold shrink-0">
-                  <BsFillCheckCircleFill />
+                  <div>
+                    <BsFillCheckCircleFill />
+                  </div>
                   기술 스택: Spring boot, Redis, Mybatis, MySQL
                 </p>
                 <p className="flex gap-1 items-center text-xl font-bold shrink-0 mt-2">
-                  <BsFillCheckCircleFill />
+                  <div>
+                    <BsFillCheckCircleFill />
+                  </div>
                   배포 : AWS(beanstalk, RDS), ROUTE53, Git Action(CI/CD)
                 </p>
               </div>

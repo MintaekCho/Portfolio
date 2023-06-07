@@ -32,7 +32,6 @@ export default function ImageWrap({
           alt={"projectImage"}
           width={800}
           height={600}
-          className="ease-in-out duration-500"
         />
         <div className="flex items-center gap-10 mb-4">
           <div className="text-5xl">
