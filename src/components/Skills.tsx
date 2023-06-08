@@ -16,7 +16,15 @@ export default function Skills() {
     "aws",
   ];
 
-  const backSkills = ["aws", "github", "mysql"];
+  const backSkills = [
+    "spring",
+    "jpa",
+    "mybatis",
+    "mariadb",
+    "mysql",
+    "aws",
+    "github",
+  ];
 
   const [front, setFront] = useState(true);
 
@@ -26,7 +34,9 @@ export default function Skills() {
         <p className="text-3xl md:text-4xl xl:text-5xl text-purple-500 tracking-widest uppercase font-bold">
           Skills
         </p>
-        <h2 className="py-4 text-md md:text-lg xl:text-xl mb-4">What I Can Do</h2>
+        <h2 className="py-4 text-md md:text-lg xl:text-xl mb-4">
+          What I Can Do
+        </h2>
         <div className="w-full min-w-[320px] flex flex-col sm:flex-row gap-6 items-center justify-between mb-10">
           <button
             onClick={() => setFront(true)}
@@ -55,7 +65,7 @@ export default function Skills() {
                       width={200}
                       height={200}
                     />
-                    <span className="uppercase text-lg font-bold text-black py-2">
+                    <span className="uppercase text-lg font-bold text-black p-4">
                       {skill}
                     </span>
                   </div>
