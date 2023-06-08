@@ -18,8 +18,8 @@ export default function Footer() {
         </li>
       </ul>
       <div className="flex flex-col items-center justify-center">
-        <p className="text-xl font-bold">☎ : 010-9446-3591</p>
-        <p className="text-xl font-bold">📮 : mintaek5555@gmail.com</p>
+        <p className="text-sm md:text-md lg:text-lg font-bold">☎ : 010-9446-3591</p>
+        <p className="text-sm md:text-md lg:text-lg font-bold">📮 : mintaek5555@gmail.com</p>
       </div>
     </footer>
   );

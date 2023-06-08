@@ -22,7 +22,7 @@ export default function HeaderNav({handleCategory}: any) {
           onClick={handleCategory}
         />
       </div>
-      <Link href={"/"} className="text-3xl font-bold">
+      <Link href={"/"} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
         Min&apos;s Portfolio
       </Link>
       <div

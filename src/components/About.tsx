@@ -11,9 +11,9 @@ export default function About() {
     <section
       id="about"
       data-aos="fade-up"
-      className="w-full max-w-[1240px] flex flex-col items-center justify-center p-8 bg-white/10 rounded-3xl"
+      className="w-4/5 max-w-[1240px] flex flex-col items-center justify-center p-8 bg-white/10 rounded-3xl"
     >
-      <h1 className="text-5xl text-purple-500 font-bold mb-4">ABOUT</h1>
+      <h1 className="text-3xl md:text-4xl xl:text-5xl text-purple-500 font-bold mb-4">ABOUT</h1>
       <Profile />
       <p className="font-bold text-sm md:text-lg xl:text-xl">
         트러블슈팅을 좋아하고 즐기는 개발자입니다.
@@ -24,34 +24,34 @@ export default function About() {
       </p>
       <div className="w-full mt-10">
         <ul className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-12 ">
-          <li className="flex gap-2 items-center justify-center py-8 text-xl font-bold text-center bg-sky-300/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
+          <li className="flex gap-2 items-center justify-center py-8 text-sm lg:text-md font-bold text-center bg-sky-300/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
             <div className="text-2xl">
               <CgProfile />
             </div>
             <span>조민택</span>
           </li>
-          <li className="flex gap-2 items-center justify-center py-8 text-xl font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
+          <li className="flex gap-2 items-center justify-center py-8 text-sm lg:text-md font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
             <div className="text-2xl">
               <MdAccessibilityNew />
             </div>
             <span>1997.07.08</span>
           </li>
 
-          <li className="flex gap-2 items-center justify-center py-8 text-xl font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
+          <li className="flex gap-2 items-center justify-center py-8 text-sm lg:text-md font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
             <div className="text-2xl">
               <AiOutlineMail />
             </div>
             <span>mintaek5555@gmail.com</span>
           </li>
 
-          <li className="flex gap-2 items-center justify-center py-8 text-xl font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
+          <li className="flex gap-2 items-center justify-center py-8 text-sm lg:text-md font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
             <div className="text-2xl">
               <HiOutlinePhone />
             </div>
             <span>010-9446-3591</span>
           </li>
 
-          <li className="flex gap-2 items-center justify-center py-8 text-xl font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
+          <li className="flex gap-2 items-center justify-center py-8 text-sm lg:text-md font-bold text-center bg-white/20 rounded-xl cursor-default text-white hover:tracking-widest hover:scale-110 hover:bg-white hover:text-black ease-in-out duration-300">
             <div className="text-2xl">
               <FaAddressBook />
             </div>

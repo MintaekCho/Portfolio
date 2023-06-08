@@ -15,14 +15,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center flex-col mt-48">
-      <RecoilRoot override={false}>
+    <div className="w-full flex items-center justify-center flex-col mt-48">
         <Introduction />
         <About />
         <Skills />
         <Project />
         <Footer />
-      </RecoilRoot>
     </div>
   );
 }
