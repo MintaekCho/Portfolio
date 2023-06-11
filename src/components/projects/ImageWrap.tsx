@@ -1,14 +1,10 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import { Project } from "./Project";
 
-export default function ImageWrap({
-  title,
-  imageCount,
-}: {
-  title: string;
-  imageCount: number;
-}) {
+export default function ImageWrap({project}: {project: Project}) {
+  const {title, imageCount} = project;
   const [count, setCount] = useState<number>(1);
   const handleUpCount = () => {
     if (count > imageCount - 1) setCount(1);

@@ -9,9 +9,6 @@ import { useRouter } from "next/navigation";
 export default function HeaderNav({ handleCategory }: any) {
   const router = useRouter();
 
-  const isLogin = useRecoilValue(loginState);
-  console.log(isLogin);
-
   const goLoginPage = () => router.push("/login");
   return (
     <nav className="flex justify-center items-center p-4 relative backdrop-blur-sm hover:text-yellow-400">

@@ -1,23 +1,17 @@
-"use client";
-
+'use client'
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { useTypewriter } from "use-typewriter-hook";
 import { Open_Sans } from "next/font/google";
-import { useRecoilState } from "recoil";
-import { loginState } from "@/atom/atom";
 
 const sans = Open_Sans({ subsets: ["latin"] });
 
 export default function Introduction() {
-
   const { textValue: typeText } = useTypewriter({
     targetText: "안녕하세요. 프론트엔드 개발자 조민택입니다.",
     autoStartDelay: 0,
     typingDelayMillis: 100,
   });
-
- 
 
   return (
     <section className="w-4/5 flex flex-col items-center gap-10">

@@ -1,0 +1,78 @@
+{
+  "data": {
+    "project": {
+      "front": [
+        {
+          "title": "shoopy",
+          "name": "쇼핑몰앱",
+          "period": "2023.04 ~ 2023.04",
+          "type": "개인프로젝트 (1인 / 2주)",
+          "description1": "",
+          "description2": [
+            "Firebase 사용하여 Oauth 로그인 구현",
+            "Firebase RealTime-DataBase 사용하여 상품 CRUD 구현",
+            "Admin 권한 구현",
+            "React-query로 네트워크 상태관리"
+          ],
+          "tech": "React, React-Query, Context-API",
+          "deploy": "versel",
+          "imageCount": 4
+        },
+
+        {
+          "title": "blog",
+          "name": "개인 블로그",
+          "period": "2023.06 ~ 2023.06",
+          "type": "개인프로젝트 (1인 / 1주)",
+          "description1": "",
+          "description2": [
+            "Carousel UI 적용",
+            "react-markdown 라이브러리 적용",
+            "syntaxHighlighter 사용하여 코드블럭 스타일링, 기존이미지 -> Next Image 태그로 전환하여 성능 향상",
+            "Client 컴포넌트 단위를 최소한으로 쪼개서 렌더링 시간 단축",
+            "비즈니스 로직을 컴포넌트와 분리하여 재사용성과 유지보수성을 높이고 컴포넌트간 의존성 줄임",
+            "페이지별 Meta-data 추가하여 SEO 최적화"
+          ],
+          "tech": "React, React-Query",
+          "deploy": "versel",
+          "imageCount": 5
+        }
+      ],
+      "back": [
+        {
+          "title": "omu",
+          "name": "오무 - 오늘의 무드",
+          "period": "2022.11 ~ 2022.12",
+          "type": "팀프로젝트 (4인 / 4주)",
+          "description1": "",
+          "description2": [
+            "Oauth2 구글 로그인과 Redis를 이용한 로그아웃 기능 구현",
+            "AOP 적용한 예외처리 로직 구현",
+            "Mood, Tood, Mail 핵심 서비스 CRUD 구현",
+            "통신 테스트 이슈 대응"
+          ],
+          "tech": "Spring boot, Redis, JPA, MySQL",
+          "deploy": "AWS(EC2, RDS)",
+          "imageCount": 5
+        },
+
+        {
+          "title": "foodiary",
+          "name": "푸디어리",
+          "period": "2023.01 ~ 2023.02",
+          "type": "팀프로젝트 (4인 / 4주)",
+          "description1": "",
+          "description2": [
+            "Oauth2 구글, 네이버 로그인과 Redis를 이용한 로그아웃 기능 구현",
+            "커뮤니티 게시판 CRUD 로직 구현",
+            "식단 추천 로직 구현 - 스케줄링 기능 적용",
+            "통신 테스트 이슈 대응"
+          ],
+          "tech": "Spring boot, Redis, Mybatis, MySQL",
+          "deploy": "AWS(beanstalk, RDS), ROUTE53, Git Action(CI/CD)",
+          "imageCount": 6
+        }
+      ]
+    }
+  }
+}
