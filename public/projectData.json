@@ -33,9 +33,26 @@
             "비즈니스 로직을 컴포넌트와 분리하여 재사용성과 유지보수성을 높이고 컴포넌트간 의존성 줄임",
             "페이지별 Meta-data 추가하여 SEO 최적화"
           ],
-          "tech": "React, React-Query",
+          "tech": "NextJS - v13, tailwind, react-markdown, syntaxHighlighter",
           "deploy": "versel",
           "imageCount": 5
+        },
+        {
+          "title": "portfolio",
+          "name": "개인 포트폴리오",
+          "period": "2023.05 ~ 2023.06",
+          "type": "개인프로젝트 (1인 / 1주)",
+          "description1": "",
+          "description2": [
+            "NextJS로 진행한 첫번째 프로젝트로 NextJS 13버전에서 바뀐 클라이언트 컴포넌트와 서버 컴포넌트의 이해도를 높일 수 있었음",
+            "Project Section을 정적인 하드코딩에서 JSON파일에 데이터를 입력하고 서버 컴포너트에서 파일을 불러와 동적으로 렌더링 될 수 있도록 리팩토링 하였음",
+            "Client 컴포넌트 단위를 최소한으로 쪼개서 렌더링 시간 단축",
+            "비즈니스 로직을 컴포넌트와 분리하여 재사용성과 유지보수성을 높이고 컴포넌트간 의존성 줄임",
+            "페이지별 Meta-data 추가하여 SEO 최적화"
+          ],
+          "tech": "NextJS - v13, tailwind",
+          "deploy": "versel",
+          "imageCount": 4
         }
       ],
       "back": [
