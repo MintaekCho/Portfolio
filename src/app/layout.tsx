@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "조민택 포트폴리오",
   description: "ABOUT | SKILL | PROJECT 소개",
+  icons: {
+    icon: '/favicion.ico'
+  }
 };
 
 export default function RootLayout({
