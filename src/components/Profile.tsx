@@ -14,7 +14,7 @@ export default function Profile() {
     if (count < 2) setCount(3);
     else setCount((count) => count - 1);
   };
-  
+
   return (
     <article className="flex flex-col items-center justify-center gap-4 my-10">
       <Image
@@ -24,6 +24,8 @@ export default function Profile() {
         width={300}
         height={400}
         priority
+        loading="lazy"
+        placeholder="blur"
       />
       <div className="flex gap-10 items-center mt-6">
         <div className="text-5xl">
