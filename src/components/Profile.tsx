@@ -24,8 +24,6 @@ export default function Profile() {
         width={300}
         height={400}
         priority
-        loading="lazy"
-        placeholder="blur"
       />
       <div className="flex gap-10 items-center mt-6">
         <div className="text-5xl">

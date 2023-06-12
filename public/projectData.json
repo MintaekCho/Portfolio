@@ -16,7 +16,9 @@
           ],
           "tech": "React, React-Query, Context-API",
           "deploy": "versel",
-          "imageCount": 4
+          "imageCount": 4,
+          "gitUrl": "https://github.com/MintaekCho/Shoppy-app",
+          "webUrl": "https://portfolio-3ap9.vercel.app/"
         },
 
         {
@@ -35,7 +37,9 @@
           ],
           "tech": "NextJS - v13, tailwind, react-markdown, syntaxHighlighter",
           "deploy": "versel",
-          "imageCount": 5
+          "imageCount": 5,
+          "gitUrl": "https://github.com/MintaekCho/Blog-app",
+          "webUrl": "https://blog-app-one-flax.vercel.app/"
         },
         {
           "title": "portfolio",
@@ -52,7 +56,8 @@
           ],
           "tech": "NextJS - v13, tailwind",
           "deploy": "versel",
-          "imageCount": 4
+          "imageCount": 4,
+          "gitUrl": "https://github.com/MintaekCho/Portfolio"
         }
       ],
       "back": [
@@ -70,7 +75,9 @@
           ],
           "tech": "Spring boot, Redis, JPA, MySQL",
           "deploy": "AWS(EC2, RDS)",
-          "imageCount": 5
+          "imageCount": 5,
+          "gitUrl": "https://github.com/codestates-seb/seb40_main_029",
+          "webUrl": "https://www.5mu.shop/"
         },
 
         {
@@ -87,7 +94,9 @@
           ],
           "tech": "Spring boot, Redis, Mybatis, MySQL",
           "deploy": "AWS(beanstalk, RDS), ROUTE53, Git Action(CI/CD)",
-          "imageCount": 6
+          "imageCount": 6,
+          "gitUrl": "https://github.com/foodiary/foodiary_project_back",
+          "webUrl": "https://foodiary.netlify.app/"
         }
       ]
     }

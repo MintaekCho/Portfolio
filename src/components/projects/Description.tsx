@@ -1,5 +1,6 @@
 import React from "react";
-import { BsFillCheckCircleFill } from "react-icons/bs";
+import { BsFillCheckCircleFill, BsGithub } from "react-icons/bs";
+import { AiOutlineLink } from "react-icons/ai";
 import { Project } from "./Project";
 
 export default function Description({ project }: { project: Project }) {
@@ -12,6 +13,8 @@ export default function Description({ project }: { project: Project }) {
     description2,
     tech,
     deploy,
+    gitUrl,
+    webUrl,
   } = project;
 
   return (
@@ -21,7 +24,9 @@ export default function Description({ project }: { project: Project }) {
       </h3>
       <ul className="w-full text-center py-8 px-12 bg-white/60 rounded-2xl text-xs sm:text-sm md:text-md lg:text-lg xl:text:xl text-black font-semibold">
         {description2.map((d, i) => (
-          <li key={i} className="list-disc mt-4">{d}</li>
+          <li key={i} className="list-disc mt-4">
+            {d}
+          </li>
         ))}
       </ul>
       <div className="w-full flex flex-col gap-2 items-center justify-between">
@@ -46,6 +51,25 @@ export default function Description({ project }: { project: Project }) {
               </span>
               <span>{`배포 : ${deploy}`}</span>
             </p>
+            <a
+              className="flex gap-1 underline items-center text-xs sm:text-sm md:text-md lg:text-lg xl:text:xl font-bold mt-2 hover:text-white/80"
+              href={gitUrl}
+              target="_blank"
+            >
+              <BsGithub />
+
+              <span>github</span>
+            </a>
+            {webUrl && (
+              <a
+                className="flex gap-1 underline items-center text-xs sm:text-sm md:text-md lg:text-lg xl:text:xl font-bold mt-2 hover:text-white/80"
+                href={webUrl}
+                target="_blank"
+              >
+                <AiOutlineLink />
+                <span>배포 링크</span>
+              </a>
+            )}
           </div>
         </div>
       </div>

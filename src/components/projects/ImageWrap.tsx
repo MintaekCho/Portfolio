@@ -29,7 +29,6 @@ export default function ImageWrap({ project }: { project: Project }) {
           width={800}
           height={600}
           loading="lazy"
-          placeholder="blur"
         />
         <div className="flex items-center gap-10 mb-4">
           <div className="text-5xl">

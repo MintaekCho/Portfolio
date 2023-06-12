@@ -21,6 +21,8 @@ export type Project = {
   tech: string;
   deploy: string;
   imageCount: number;
+  gitUrl: string;
+  webUrl: string | undefined;
 };
 
 export default async function Project() {
