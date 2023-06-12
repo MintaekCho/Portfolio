@@ -33,7 +33,6 @@ export default function Category({ closeCategory, categoryVisible }: any) {
         <div className="border w-4/5 absolute left-[10%] top-36 border-gray-100" />
         <div className="">
           <ul className="text-black text-xl p-14 pt-48 flex flex-col">
-            {/* @ts-expect-error Async Server Component */}
             <Links
               onClick={closeCategory}
               to="home"
@@ -47,7 +46,6 @@ export default function Category({ closeCategory, categoryVisible }: any) {
               </li>
             </Links>
 
-            {/* @ts-expect-error Async Server Component */}
             <Links
               onClick={closeCategory}
               to="about"
@@ -61,7 +59,6 @@ export default function Category({ closeCategory, categoryVisible }: any) {
               </li>
             </Links>
 
-            {/* @ts-expect-error Async Server Component */}
             <Links
               onClick={closeCategory}
               to="skills"
@@ -75,7 +72,6 @@ export default function Category({ closeCategory, categoryVisible }: any) {
               </li>
             </Links>
 
-            {/* @ts-expect-error Async Server Component */}
             <Links
               onClick={closeCategory}
               to="project"
@@ -89,7 +85,6 @@ export default function Category({ closeCategory, categoryVisible }: any) {
               </li>
             </Links>
 
-            {/* @ts-expect-error Async Server Component */}
             <Links
               onClick={closeCategory}
               to="contact"
