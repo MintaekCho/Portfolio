@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import { Project } from "./Project";
 
-export default function ImageWrap({project}: {project: Project}) {
-  const {title, imageCount} = project;
+export default function ImageWrap({ project }: { project: Project }) {
+  const { title, imageCount } = project;
   const [count, setCount] = useState<number>(1);
   const handleUpCount = () => {
     if (count > imageCount - 1) setCount(1);
@@ -28,6 +28,7 @@ export default function ImageWrap({project}: {project: Project}) {
           alt={"projectImage"}
           width={800}
           height={600}
+          loading="lazy"
         />
         <div className="flex items-center gap-10 mb-4">
           <div className="text-5xl">
