@@ -89,7 +89,6 @@ export default function ProjectSection({
         </ul>
       )}
 
-      {/* @ts-expect-error Async Server Component */}
       <ImageWrap project={project} />
       <Description project={project} />
     </section>
