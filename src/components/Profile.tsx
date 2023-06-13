@@ -24,6 +24,7 @@ export default function Profile() {
     <article className="flex flex-col items-center justify-center gap-4 my-10">
       {images.map((image, i) => (
         <Image
+          key={i}
           className={`${
             count === i + 1 ? "" : "hidden"
           } rounded-3xl hover:scale-105 ease-in-out duration-300`}

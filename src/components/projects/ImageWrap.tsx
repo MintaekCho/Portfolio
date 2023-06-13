@@ -32,6 +32,7 @@ export default function ImageWrap({ project }: { project: Project }) {
       <div className="flex flex-col gap-4 items-center justify-center">
         {images.map((image, i) => (
           <Image
+            key={i}
             className={`${count === i + 1 ? "" : "hidden"}`}
             src={image}
             alt={title}
