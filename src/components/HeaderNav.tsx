@@ -11,10 +11,10 @@ export default function HeaderNav({ handleCategory }: any) {
 
   const goLoginPage = () => router.push("/login");
   return (
-    <nav className="flex justify-center items-center p-4 relative backdrop-blur-sm hover:text-yellow-400">
+    <nav className="group flex justify-center items-center p-4 relative backdrop-blur-sm ">
       <div className="text-white text-4xl absolute left-0">
         <GiHamburgerMenu
-          className="cursor-pointer hover:scale-110 ease-in-out duration-300"
+          className="cursor-pointer hover:scale-110 ease-in-out duration-300 "
           onClick={handleCategory}
         />
       </div>
@@ -26,7 +26,7 @@ export default function HeaderNav({ handleCategory }: any) {
       </Link>
       <div
         onClick={goLoginPage}
-        className="text-4xl flex flex-col items-center absolute right-0 cursor-pointer"
+        className="text-4xl flex flex-col items-center absolute right-0 cursor-pointer duration-300"
       >
         <CgProfile />
         <span className="text-sm font-bold">admin</span>
