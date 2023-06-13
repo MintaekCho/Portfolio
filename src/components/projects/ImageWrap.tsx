@@ -4,8 +4,15 @@ import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import { Project } from "./Project";
 
 export default function ImageWrap({ project }: { project: Project }) {
+  const images = [];
+
   const { title, imageCount } = project;
   const [count, setCount] = useState<number>(1);
+
+  for (let i = 1; i <= project.imageCount; i++) {
+    images.push(`/images/projects/${project.title}/${project.title}${i}.png`);
+  }
+
   const handleUpCount = () => {
     if (count > imageCount - 1) setCount(1);
     else setCount((count) => count + 1);
@@ -23,13 +30,15 @@ export default function ImageWrap({ project }: { project: Project }) {
   return (
     <>
       <div className="flex flex-col gap-4 items-center justify-center">
-        <Image
-          src={`/images/projects/${title}/${title}${count}.png`}
-          alt={"projectImage"}
-          width={800}
-          height={600}
-          loading="lazy"
-        />
+        {images.map((image, i) => (
+          <Image
+            className={`${count === i + 1 ? "" : "hidden"}`}
+            src={image}
+            alt={title}
+            width={800}
+            height={600}
+          />
+        ))}
         <div className="flex items-center gap-10 mb-4">
           <div className="text-5xl">
             <BsFillCaretLeftFill
