@@ -13,7 +13,6 @@ export default function Home() {
       <Introduction />
       <About />
       <Skills />
-      {/* @ts-expect-error Async Server Component */}
       <Project />
       <Footer />
     </div>
