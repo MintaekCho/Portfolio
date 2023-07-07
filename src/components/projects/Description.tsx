@@ -22,6 +22,11 @@ export default function Description({ project }: { project: Project }) {
       <h3 className="text-md sm:text-lg md:text-xl lg-text-2xl px-8 py-4 bg-red-400 text-white rounded-2xl mb-10">
         {name}
       </h3>
+      {description1 && (
+        <div className="w-full text-center py-8 px-12 bg-white/60 rounded-2xl text-xs sm:text-sm md:text-md lg:text-lg xl:text:xl text-black font-semibold mb-4">
+          <p className="list-disc mt-4 font-bold">{description1}</p>
+        </div>
+      )}
       <ul className="w-full text-center py-8 px-12 bg-white/60 rounded-2xl text-xs sm:text-sm md:text-md lg:text-lg xl:text:xl text-black font-semibold">
         {description2.map((d, i) => (
           <li key={i} className="list-disc mt-4">
