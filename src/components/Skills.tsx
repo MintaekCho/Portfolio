@@ -10,6 +10,7 @@ export default function Skills() {
     "ts",
     "react",
     "next",
+    'swr',
     "firebase",
     "tailwind",
     "github",
@@ -19,6 +20,9 @@ export default function Skills() {
   const backSkills = [
     "spring",
     "jpa",
+    'python',
+    'selenium',
+    'mongodb',
     "mybatis",
     "mariadb",
     "mysql",

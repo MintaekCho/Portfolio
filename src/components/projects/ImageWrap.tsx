@@ -29,11 +29,11 @@ export default function ImageWrap({ project }: { project: Project }) {
 
   return (
     <>
-      <div className="flex flex-col gap-4 items-center justify-center">
+      <div className="w-full h-full flex flex-col gap-4 items-center justify-center">
         {images.map((image, i) => (
           <Image
             key={i}
-            className={`${count === i + 1 ? "" : "hidden"}`}
+            className={`w-full max-h-[500px] ${count === i + 1 ? "" : "hidden"}`}
             src={image}
             alt={title}
             width={800}

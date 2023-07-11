@@ -3,9 +3,9 @@ import Aos from "aos";
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import Description from "./Description";
+import ImageWrap from "./ImageWrap";
 import { Project, ProjectData } from "./Project";
 
-const ImageWrap = dynamic(() => import("./ImageWrap"));
 
 export default function ProjectSection({
   projects,
