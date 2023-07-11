@@ -21,7 +21,7 @@
           ],
           "tech": "NextJS, NextAuth, tailwind, SWR, python, selenium, mongodb",
           "deploy": "versel",
-          "imageCount": 6,
+          "imageCount": 7,
           "gitUrl": "https://github.com/MintaekCho/consert-app/tree/main",
           "webUrl": "https://consert-app.vercel.app/"
         },

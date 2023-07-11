@@ -2,8 +2,6 @@
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
-import { useRecoilValue } from "recoil";
-import { loginState } from "@/atom/atom";
 import { useRouter } from "next/navigation";
 
 export default function HeaderNav({ handleCategory }: any) {
