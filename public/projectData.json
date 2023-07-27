@@ -10,8 +10,10 @@
           "description1": "내가 좋아하는 가수의 콘서트 일정 및 정보와 작업한 앨범, 관련 유튜브 영상 등을 한눈에 볼 수 있도록 기획한 서비스입니다.",
           "description2": [
             "NextAuth 사용하여 Oauth 로그인 구현",
+            "컴포넌트별 기능에 따라 SSG, SSR, CSR 렌더링 구별하여 성능 최적화",
             "SWR 사용하여 실시간 네트워크 상태관리 - Optimistic UI적용",
             "python selenium 크롤링을 통한 데이터(콘서트, 아티스트, 앨범) 수집",
+            "AWS Lambda, CloudWatch 활용하여 파이썬 크롤링 자동화 구현",
             "아토믹 디자인 패턴으로 컴포넌트 관리 (재사용성과, 유지보수성 향상)",
             "재사용되는 로직들 커스텀 훅으로 분리해서 관리",
             "카카오 지도 API, 장소 검색 API 사용하여 콘서트 장소 지도 구현 (길찾기, 로드뷰 제공)",
@@ -19,7 +21,7 @@
             "배포 후 사용자 피드백을 받아 최적화 작업 등 리팩토링 진행하여 깃허브로 버전관리 진행 중",
             "깃허브 프로젝트(칸반보드) 활용하여 이슈관리 및 코드리뷰 진행하였음"
           ],
-          "tech": "NextJS, NextAuth, tailwind, SWR, python, selenium, mongodb",
+          "tech": "NextJS, NextAuth, tailwind, SWR, Recoil, python, selenium, mongodb, AWS Lambda, CloudWatch",
           "deploy": "versel",
           "imageCount": 7,
           "gitUrl": "https://github.com/MintaekCho/consert-app/tree/main",
