@@ -21,7 +21,7 @@
             "배포 후 사용자 피드백을 받아 최적화 작업 등 리팩토링 진행하여 깃허브로 버전관리 진행 중",
             "깃허브 프로젝트(칸반보드) 활용하여 이슈관리 및 코드리뷰 진행하였음"
           ],
-          "tech": "NextJS, NextAuth, tailwind, SWR, Recoil, python, selenium, mongodb, AWS Lambda, CloudWatch",
+          "tech": "NextJS, NextAuth, Tailwind, SWR, Recoil, Python, Selenium, Mongodb, AWS Lambda, CloudWatch",
           "deploy": "versel",
           "imageCount": 7,
           "gitUrl": "https://github.com/MintaekCho/consert-app/tree/main",
