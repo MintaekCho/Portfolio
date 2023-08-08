@@ -21,7 +21,8 @@ export default function About() {
       <ul className="flex flex-col gap-4 list-disc bg-white/10 p-8 rounded-lg">
         <li>
           <p className={DES_STYLE}>
-            <b>트러블슈팅과 최신기술</b> 공부하는것을 좋아하며 계속된 성장을 위해
+            <b>트러블슈팅과 최신기술</b> 
+            공부하는것을 좋아하며 계속된 성장을 위해
             노력합니다.
           </p>
         </li>
