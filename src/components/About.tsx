@@ -49,7 +49,8 @@ export default function About() {
           <p className={DES_STYLE}>
             백엔드 개발 경험을 통해 Java와 SpringBoot를 사용한 서버 구현이
             가능하며, NextJs 13 버전의 라우팅을 통한 CRUD 서버 구현이
-            가능합니다. 또한 요구사항에 따른 DB와 ERD 설계가 가능합니다. <br />
+            가능합니다. 또한 요구사항에 따른 DB와 ERD 설계가 가능합니다. 
+            <br />
             이를 통해 백엔드 개발자와도 원할한 커뮤니케이션이 가능합니다.
           </p>
         </li>
