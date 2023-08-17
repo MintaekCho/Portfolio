@@ -11,6 +11,7 @@ export default function Skills() {
     "react",
     "next",
     'swr',
+    "recoil",
     "firebase",
     "tailwind",
     "github",
