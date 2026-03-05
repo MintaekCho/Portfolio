@@ -16,17 +16,20 @@ interface ImageCarouselProps {
 
 function useCarousel(length: number) {
   const [current, setCurrent] = useState(0);
-  const [animating, setAnimating] = useState(false);
+  const [leaving, setLeaving] = useState<number | null>(null);
   const [direction, setDirection] = useState<"left" | "right">("right");
+  const [animating, setAnimating] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const go = useCallback((next: number, dir: "left" | "right") => {
     if (animating || next === current) return;
+    setLeaving(current);
     setDirection(dir);
     setAnimating(true);
+    setCurrent(next);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
-      setCurrent(next);
+      setLeaving(null);
       setAnimating(false);
     }, 300);
   }, [animating, current]);
@@ -35,7 +38,46 @@ function useCarousel(length: number) {
   const next = useCallback(() => go((current + 1) % length, "right"), [go, current, length]);
   const goTo = useCallback((i: number) => go(i, i > current ? "right" : "left"), [go, current]);
 
-  return { current, animating, direction, prev, next, goTo };
+  return { current, leaving, animating, direction, prev, next, goTo };
+}
+
+// 각 이미지 슬롯의 CSS 상태 계산
+function getImageStyle(
+  i: number,
+  current: number,
+  leaving: number | null,
+  direction: "left" | "right",
+  animating: boolean,
+): React.CSSProperties {
+  const isCurrent = i === current;
+  const isLeaving = i === leaving;
+
+  if (isCurrent) {
+    return {
+      opacity: 1,
+      transform: "translateX(0)",
+      transition: animating ? "opacity 280ms ease-out, transform 280ms ease-out" : "none",
+      zIndex: 2,
+      pointerEvents: "auto",
+    };
+  }
+  if (isLeaving) {
+    return {
+      opacity: 0,
+      transform: direction === "right" ? "translateX(-16px)" : "translateX(16px)",
+      transition: "opacity 280ms ease-out, transform 280ms ease-out",
+      zIndex: 1,
+      pointerEvents: "none",
+    };
+  }
+  // 나머지: 미리 로드만 해두고 완전히 숨김
+  return {
+    opacity: 0,
+    transform: "translateX(0)",
+    transition: "none",
+    zIndex: 0,
+    pointerEvents: "none",
+  };
 }
 
 function NavButton({ onClick, label, children }: {
@@ -51,7 +93,7 @@ function NavButton({ onClick, label, children }: {
         flex items-center justify-center
         hover:bg-gray-900 hover:border-gray-900 hover:scale-110
         active:scale-95
-        transition-all duration-150 ease-out z-10"
+        transition-all duration-150 ease-out"
     >
       <span className="text-gray-600 group-hover/btn:text-white transition-colors duration-150">
         {children}
@@ -77,19 +119,57 @@ function Dots({ total, current, goTo }: { total: number; current: number; goTo: 
   );
 }
 
+function ImageStack({ images, current, leaving, direction, animating, onImageClick }: {
+  images: CarouselImage[];
+  current: number;
+  leaving: number | null;
+  direction: "left" | "right";
+  animating: boolean;
+  onImageClick?: () => void;
+}) {
+  return (
+    <>
+      {images.map((img, i) => (
+        <div
+          key={i}
+          style={getImageStyle(i, current, leaving, direction, animating)}
+          className="absolute inset-0"
+        >
+          <Image
+            src={img.src}
+            alt={img.alt}
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 768px"
+            priority={i === 0}
+          />
+        </div>
+      ))}
+      {/* 클릭 레이어는 최상단 */}
+      {onImageClick && (
+        <div
+          className="absolute inset-0 cursor-zoom-in"
+          style={{ zIndex: 10 }}
+          onClick={onImageClick}
+        />
+      )}
+    </>
+  );
+}
+
 function Lightbox({ images, initial, onClose }: {
   images: CarouselImage[];
   initial: number;
   onClose: () => void;
 }) {
-  const { current, animating, direction, prev, next, goTo } = useCarousel(images.length);
+  const { current, leaving, animating, direction, prev, next, goTo } = useCarousel(images.length);
   const [initialized, setInitialized] = useState(false);
   const goToRef = useRef(goTo);
   goToRef.current = goTo;
 
   useEffect(() => {
     if (!initialized) {
-      goToRef.current(initial);
+      if (initial !== 0) goToRef.current(initial);
       setInitialized(true);
     }
   }, [initial, initialized]);
@@ -109,10 +189,6 @@ function Lightbox({ images, initial, onClose }: {
     return () => { document.body.style.overflow = ""; };
   }, []);
 
-  const slideClass = animating
-    ? direction === "right" ? "opacity-0 translate-x-4" : "opacity-0 -translate-x-4"
-    : "opacity-100 translate-x-0";
-
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-black/90 backdrop-blur-sm" onClick={onClose}>
       <div className="flex items-center justify-between px-6 py-4 shrink-0" onClick={(e) => e.stopPropagation()}>
@@ -130,8 +206,14 @@ function Lightbox({ images, initial, onClose }: {
         {images.length > 1 && (
           <NavButton onClick={prev} label="이전 이미지"><ChevronLeft className="w-4 h-4" /></NavButton>
         )}
-        <div className={`relative flex-1 h-full max-w-5xl transition-all duration-300 ease-out ${slideClass}`}>
-          <Image src={images[current].src} alt={images[current].alt} fill className="object-contain" sizes="100vw" priority />
+        <div className="relative flex-1 h-full max-w-5xl">
+          <ImageStack
+            images={images}
+            current={current}
+            leaving={leaving}
+            direction={direction}
+            animating={animating}
+          />
         </div>
         {images.length > 1 && (
           <NavButton onClick={next} label="다음 이미지"><ChevronRight className="w-4 h-4" /></NavButton>
@@ -139,7 +221,9 @@ function Lightbox({ images, initial, onClose }: {
       </div>
 
       <div className="flex flex-col items-center gap-3 px-6 py-5 shrink-0" onClick={(e) => e.stopPropagation()}>
-        {images[current].caption && <p className="text-xs text-white/60 text-center">{images[current].caption}</p>}
+        {images[current].caption && (
+          <p className="text-xs text-white/60 text-center">{images[current].caption}</p>
+        )}
         {images.length > 1 && <Dots total={images.length} current={current} goTo={goTo} />}
       </div>
     </div>
@@ -147,37 +231,40 @@ function Lightbox({ images, initial, onClose }: {
 }
 
 export default function ImageCarousel({ images }: ImageCarouselProps) {
-  const { current, animating, direction, prev, next, goTo } = useCarousel(images.length);
+  const { current, leaving, animating, direction, prev, next, goTo } = useCarousel(images.length);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   if (images.length === 0) return null;
-
-  const slideClass = animating
-    ? direction === "right" ? "opacity-0 translate-x-4" : "opacity-0 -translate-x-4"
-    : "opacity-100 translate-x-0";
 
   return (
     <>
       <div className="relative">
         <div className="relative rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-100 aspect-video group/carousel">
-          <div className="absolute inset-0 cursor-zoom-in" onClick={() => setLightboxOpen(true)}>
-            <div className={`absolute inset-0 transition-all duration-300 ease-out ${slideClass}`}>
-              <Image src={images[current].src} alt={images[current].alt} fill className="object-contain" sizes="(max-width: 768px) 100vw, 768px" />
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-200 pointer-events-none">
-              <div className="bg-black/40 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5">
-                <ZoomIn className="w-3.5 h-3.5 text-white" />
-                <span className="text-white text-xs font-medium">전체화면으로 보기</span>
-              </div>
+          {/* 모든 이미지를 DOM에 올려 preload — CSS로만 show/hide */}
+          <ImageStack
+            images={images}
+            current={current}
+            leaving={leaving}
+            direction={direction}
+            animating={animating}
+            onImageClick={() => setLightboxOpen(true)}
+          />
+
+          {/* 줌 힌트 */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-200 pointer-events-none" style={{ zIndex: 11 }}>
+            <div className="bg-black/40 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5">
+              <ZoomIn className="w-3.5 h-3.5 text-white" />
+              <span className="text-white text-xs font-medium">전체화면으로 보기</span>
             </div>
           </div>
 
+          {/* 네비게이션 버튼 */}
           {images.length > 1 && (
             <>
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10" onClick={(e) => e.stopPropagation()}>
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 z-20" onClick={(e) => e.stopPropagation()}>
                 <NavButton onClick={prev} label="이전 이미지"><ChevronLeft className="w-4 h-4" /></NavButton>
               </div>
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10" onClick={(e) => e.stopPropagation()}>
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 z-20" onClick={(e) => e.stopPropagation()}>
                 <NavButton onClick={next} label="다음 이미지"><ChevronRight className="w-4 h-4" /></NavButton>
               </div>
             </>
@@ -190,7 +277,9 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
         </div>
       </div>
 
-      {lightboxOpen && <Lightbox images={images} initial={current} onClose={() => setLightboxOpen(false)} />}
+      {lightboxOpen && (
+        <Lightbox images={images} initial={current} onClose={() => setLightboxOpen(false)} />
+      )}
     </>
   );
 }

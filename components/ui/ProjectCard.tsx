@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import Badge from "./Badge";
@@ -25,8 +27,13 @@ export default function ProjectCard({
   statusVariant = "default",
   thumbnail,
 }: ProjectCardProps) {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-col rounded-2xl border border-gray-200 bg-white overflow-hidden hover:border-gray-300 hover:shadow-sm transition-all duration-200">
+    <div
+      onClick={() => router.push(href)}
+      className="flex flex-col rounded-2xl border border-gray-200 bg-white overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-200 cursor-pointer group"
+    >
       {thumbnail && (
         <div className="relative w-full aspect-video bg-white border-b border-gray-100">
           <Image src={thumbnail} alt={`${title} 썸네일`} fill className="object-contain p-3" />
@@ -39,7 +46,13 @@ export default function ProjectCard({
             {status && <Badge variant={statusVariant}>{status}</Badge>}
           </div>
           {externalUrl && (
-            <a href={externalUrl} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 transition-colors shrink-0">
+            <a
+              href={externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-gray-400 hover:text-gray-700 transition-colors shrink-0"
+            >
               <ExternalLink className="w-4 h-4" />
             </a>
           )}
@@ -54,10 +67,10 @@ export default function ProjectCard({
           ))}
         </div>
 
-        <Link href={href} className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900 hover:gap-2.5 transition-all duration-200">
+        <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-900 group-hover:gap-2.5 transition-all duration-200">
           자세히 보기
           <ArrowRight className="w-4 h-4" />
-        </Link>
+        </span>
       </div>
     </div>
   );
